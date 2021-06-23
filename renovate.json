@@ -1,0 +1,41 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        ":automergeDisabled",
+        ":labels(Maintenance,RenovateBot)"
+    ],
+    "commitMessagePrefix": "[RenovateBot]",
+    "prConcurrentLimit": 0,
+    "prHourlyLimit": 5,
+    "rangeStrategy": "bump",
+    "rebaseWhen": "never",
+    "stabilityDays": 7,
+    "packageRules": [
+        {
+            "matchPackagePatterns": ["^drenso/", "^@drenso/"],
+            "rebaseWhen": "conflicted",
+            "stabilityDays": 0
+        },
+        {
+            "matchPackagePatterns": ["^symfony/"],
+            "rebaseWhen": "conflicted",
+            "stabilityDays": 0
+        },
+        {
+            "matchPackagePatterns": ["^@types/"],
+            "stabilityDays": 0
+        },
+        {
+            "matchPackagePatterns": ["^jms/serializer"],
+            "groupName": "JMS serializer packages",
+            "groupSlug": "jms-serializer"
+        },
+        {
+            "matchPackagePatterns": ["^datatables.net"],
+            "groupName": "DataTables packages",
+            "groupSlug": "datatables"
+        }
+    ]
+}
+
